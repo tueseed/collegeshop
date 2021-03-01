@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>โปรแกรมขายสินค้าในร้านค้าวิทยาลัย.</title>
+    <title>โปรแกรมขายสินค้าในร้านค้าวิทยาลัย</title>
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/theme_1545570683953.css">
     <!-- <link rel="stylesheet" href="./assets/css/star-rating.css"> -->
@@ -25,13 +25,13 @@
     </style>
   </head>
 
-  <body>
+  <body class="bg-dark">
     <header class="pb-3" id="header">
       <!-- Image and text -->
-      <nav class="shadow-sm navbar navbar-light shadow" style = "background-color: #DDB892;">
+      <nav class="shadow-sm navbar navbar-light shadow">
         <div class="container-fluid">
           <a class="navbar-brand text-white" href="?action=home" style="font-size: 36px;">
-            ระบบยืมหนังสือผ่านเว็บแอพพลิเคชั่น
+          โปรแกรมขายสินค้าในร้านค้าวิทยาลัย
           </a>
           <div class="dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
