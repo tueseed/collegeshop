@@ -1,38 +1,12 @@
-$('#circularMenu').hide()
-function reqpicurl()
-{
-    if($('#bookcoverimage').length == 0)
-    {
-        $('#bookcover').attr('src','images/bookcover.jpg')
-    }
-    $('#bookcover').attr('src',$('#bookcoverimage').val())
-}
-function imgError(image) {
-    image.onerror = " ";
-    image.src = "images/bookcover.jpg";
-    return true;
-}
-//-----------ตรวจสอบการกด Spacebar เพื่อใส่เครื่องหมาย , --------//
-$('#category').keypress(function(e) {
-    if (e.which === 32) {
-                            var cateInput = $('#category').val()  
-                            $('#category').val(cateInput+',')
-    }
-    var cateInput1 = $('#category').val() 
-    $('#category').val(cateInput1.split(' ').join(''))
-})
-
-function addbook()
+function addproduct()
 {
     var formData = new FormData()
     formData.append('command','add')
-    formData.append('bookname',$('#bookname').val())
-    formData.append('writer',$('#writer').val())
-    formData.append('category',$('#category').val())
-    formData.append('coverurl',$('#bookcoverimage').val())
-    formData.append('description',$('#bookdescription').val())
+    formData.append('barcode',$('#barcode').val())
+    formData.append('productName',$('#productName').val())
+    formData.append('productPrice',$('#productPrice').val())
     $.ajax({
-            url: 'api/api_book_all.php',
+            url: 'api/api_product_all.php',
             method: 'POST',
             data:formData,
             async: true,
@@ -41,7 +15,7 @@ function addbook()
             contentType: false,
             beforeSend : function()
             {  
-                $('#cardaddbook').block({
+                $('#addproductcard').block({
                                         message: '<div class="spinner-border text-primary display-4" style="width: 4rem; height: 4rem;" role="status"><span class="sr-only">Loading...</span></div>',
                                         overlayCSS : { 
                                                         backgroundColor: '#ffffff',
@@ -68,13 +42,12 @@ function addbook()
             },
             complete :function()
             {
-                $('#cardaddbook').unblock()
+                $('#addproductcard').unblock()
                 Swal.fire({
-                    title: "เพิ่มข้อมูลหนังสือสำเร็จ",
+                    title: "เพิ่มข้อมูลสินค้าสำเร็จ",
                     type: 'success'
-                    
-                  }).then(location.reload() ) 
+                  })
                    
             }					
-        })
+        }) 
 }

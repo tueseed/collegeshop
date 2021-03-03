@@ -48,17 +48,17 @@
                   <span id = "DepartmentFullName"></span>
                 </div>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="?action=memberdata" name="admin_menu1" id="admin_menu_1">
+                <!-- <a class="dropdown-item" href="?action=memberdata" name="" id="admin_menu_1">
                   <i class="fas fa-book-medical fa-sm fa-fw mr-2 text-gray-400"></i>
                   จัดการข้อมูลสมาชิก
                 </a>
-                <a class="dropdown-item" href="?action=bookadd" name="admin_menu1" id="admin_menu_2">
+                <a class="dropdown-item" href="?action=bookadd" name="" id="admin_menu_2">
                   <i class="fas fa-book-medical fa-sm fa-fw mr-2 text-gray-400"></i>
                   เพิ่มข้อมูลหนังสือ
-                </a>
-                <a class="dropdown-item" href="?action=return" name="admin_menu1" id="admin_menu_3">
+                </a> -->
+                <a class="dropdown-item" href="?action=addproduct" name="" id="admin_menu_3">
                   <i class="fas fa-book-medical fa-sm fa-fw mr-2 text-gray-400"></i>
-                  ข้อมูลการยืม
+                  เพิ่มข้อมูลสินค้า
                 </a>
                 <a class="dropdown-item" href="#" onclick="des_session()">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>

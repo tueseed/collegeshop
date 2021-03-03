@@ -15,10 +15,10 @@
 	// $password = "p@ssw0rd";
   // $db = "auc_db";
 
-  $server = "us-cdbr-east-02.cleardb.com";
-	$username = "bcf30a6a0ed80f";
-	$password = "fa8e030a";
-  $db = "heroku_350e85e5fefce0a";
+  $server = "us-cdbr-east-03.cleardb.com";
+	$username = "b68aa37aa44af0";
+	$password = "401c709d";
+  $db = "heroku_17e8eebbc1fc36b";
   
  
 	

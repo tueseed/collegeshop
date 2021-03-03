@@ -13,5 +13,46 @@ $(window).resize(function()
                                 $('#goodscard').attr('style','height:' + newh + 'px;')
                             })
 
-
-
+$('#textsale').keypress(function(event){
+                                            var keycode = (event.keyCode ? event.keyCode : event.which)
+                                            if(keycode == '13'){
+                                                queryProduct()
+                                            }
+                                        })
+function queryProduct()
+{
+    var formData = new FormData()
+    formData.append('command','queryProduct')
+    formData.append('barcode',$('#textsale').val())
+    $.ajax({
+            url: 'api/api_product_all.php',
+            method: 'POST',
+            data:formData,
+            async: true,
+            cache: false,
+            processData: false,
+            contentType: false,
+            beforeSend : function()
+            {  
+                $('#textsale').prop('disabled',true)
+            },
+            success: function(response) 
+            {
+                var obj = JSON.parse(response)
+                // var j =0;
+                // while(obj[j])
+                // {
+                //     render_tech_card(obj[j])
+                //     j++;
+                // }
+                // console.log(obj)
+                console.log(obj)
+                // location.reload() 
+                  
+            },
+            complete :function()
+            {
+                $('#textsale').prop('disabled',false)
+            }					
+        }) 
+}

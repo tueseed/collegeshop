@@ -3,12 +3,10 @@
     $cmd = $_POST['command'];
     if($cmd == 'add')
     {
-        $bookname = $_POST["bookname"];
-        $writer = $_POST["writer"];
-        $category = $_POST["category"];
-        $coverurl = $_POST["coverurl"];
-        $description = $_POST["description"];
-        $querytextadd = "INSERT INTO tbl_book(bookname,writer,category,descript,coverimage) VALUES('$bookname','$writer','$category','$description','$coverurl')";
+        $barcode = $_POST["barcode"];
+        $productName = $_POST["productName"];
+        $productPrice = $_POST["productPrice"];
+        $querytextadd = "INSERT INTO product(barcode,productName,productPrice) VALUES('$barcode','$productName','$productPrice')";
         mysqli_query($conn,$querytextadd);
         echo 'Inserted';
     }
@@ -16,6 +14,18 @@
     {
             $queryallbook = "SELECT * FROM tbl_book";
             $query = mysqli_query($conn,$queryallbook);
+            $data = array();
+            while($obj = mysqli_fetch_assoc($query))
+            {
+                array_push($data,$obj);
+            }
+            echo json_encode($data); 
+    }
+    else if($cmd == 'queryProduct')
+    {
+            $barcode = $_POST["barcode"];    
+            $queryproduct = "SELECT * FROM product WHERE barcode ='$barcode'";
+            $query = mysqli_query($conn,$queryproduct);
             $data = array();
             while($obj = mysqli_fetch_assoc($query))
             {

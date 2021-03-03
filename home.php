@@ -50,7 +50,10 @@
             รายการขาย
         </div>
         <div class="card-body">
-            <div class="row bg-dark text-white">
+            <div class="row">
+              <input class="btn-block" type="text" id="textsale">
+            </div>
+            <div class="row bg-dark text-white mt-1">
               <div class="col-lg-1">
                 #
               </div>
