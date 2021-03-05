@@ -45,14 +45,15 @@ function queryProduct()
                 var obj = JSON.parse(response)
                 
                 
-                $('#productForsale').append(renderproduct(obj[0]))
+                // $('#productForsale').append(renderproduct(obj[0]))
                 salelist.push(obj[0])
                 $('#textsale').prop('disabled',false)
-
+                $('#productForsale').empty()
                 var j = 0
                 var totalprice = 0
                 while(salelist[j])
                 {
+                    $('#productForsale').append(renderproduct(salelist[j],j))
                     totalprice = parseFloat(totalprice) + parseFloat(salelist[j].productPrice)
                     j++
                 }
@@ -70,26 +71,41 @@ function queryProduct()
             }					
         }) 
 }
-function renderproduct(product)
+function renderproduct(product,productnum)
 {
     return[
     '<div class="row" style="border-bottom-style: solid;border-bottom-width: thin;">',
         '<div class="col-lg-1">',
-            //   1
+            parseInt(productnum +1),
         '</div>',
-        '<div class="col-lg-5">',
+        '<div class="col-lg-7">',
             product.productName,
         '</div>',
-        '<div class="col-lg-2">',
-            '1',
-        '</div>',
+       
         '<div class="col-lg-2">',
             product.productPrice,
         '</div>',
         '<div class="col-lg-2">',
-           '<i class="fas fa-trash fa-sm fa-fw mr-2 text-danger"></i>',
+           '<i class="fas fa-trash fa-sm fa-fw mr-2 text-danger" onclick="delfromsale(' + productnum + ')"></i>',
         '</div>',
         '</div>'].join("")
+}
+
+function delfromsale(index)
+{
+    salelist.splice(index,1)
+    $('#productForsale').empty()
+    var j = 0
+    var totalprice = 0
+    while(salelist[j])
+        {
+            $('#productForsale').append(renderproduct(salelist[j],j))
+            totalprice = parseFloat(totalprice) + parseFloat(salelist[j].productPrice)
+            j++
+        }
+        $('#productnums').html(j)
+        $('#total').html(totalprice)
+
 }
 console.log($('#productForsale').children().length)
 

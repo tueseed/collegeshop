@@ -57,17 +57,14 @@
               <div class="col-lg-1">
                 #
               </div>
-              <div class="col-lg-5">
+              <div class="col-lg-7">
                 ชื่อสินค้า
               </div>
               <div class="col-lg-2">
                 ราคา
               </div>
               <div class="col-lg-2">
-                จำนวน
-              </div>
-              <div class="col-lg-2">
-                  รวม
+                  ลบ
               </div>
               
             </div>
