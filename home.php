@@ -91,6 +91,10 @@
               </div> -->
             </div>
         </div>  
+        <div class="card-footer">
+        <div class="float-left">สินค้าจำนวน <span id="productnums">-</span> ชื้น รวมเงิน <span id="total">-</span> บาท</div>    
+          <button class="btn btn-success float-right">คิดเงิน</button>
+        </div>
       </div>
   </div>
 </div>

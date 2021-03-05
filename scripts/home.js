@@ -5,6 +5,7 @@ $(window).ready(function()
     var h = $(window).height()
     var newh = parseInt(h-120)
     $('#goodscard').attr('style','height:' + newh + 'px;')
+    $('#salescard').attr('style','height:' + newh + 'px;')
     
 })
 $(window).resize(function()
@@ -13,6 +14,7 @@ $(window).resize(function()
                                 var h = $(window).height()
                                 var newh = parseInt(h-120)
                                 $('#goodscard').attr('style','height:' + newh + 'px;')
+                                $('#salescard').attr('style','height:' + newh + 'px;')
                             })
 
 $('#textsale').keypress(function(event){
@@ -46,10 +48,18 @@ function queryProduct()
                 $('#productForsale').append(renderproduct(obj[0]))
                 salelist.push(obj[0])
                 $('#textsale').prop('disabled',false)
-                // location.reload() 
-                console.log(salelist)
-                console.log(salelist.productPrice.reduce())
-                  
+
+                var j = 0
+                var totalprice = 0
+                while(salelist[j])
+                {
+                    totalprice = parseFloat(totalprice) + parseFloat(salelist[j].productPrice)
+                    j++
+                }
+                $('#productnums').html(j)
+                $('#total').html(totalprice)
+                console.log(totalprice)
+                
             },
             complete :function()
             {
@@ -77,7 +87,7 @@ function renderproduct(product)
             product.productPrice,
         '</div>',
         '<div class="col-lg-2">',
-            //   10
+           '<i class="fas fa-trash fa-sm fa-fw mr-2 text-danger"></i>',
         '</div>',
         '</div>'].join("")
 }
