@@ -6,7 +6,7 @@
             ข้อมูลสินค้า
         </div>
         <div class="card-body">
-            <div class="row bg-dark text-white">
+            <div class="row text-white" style="background-color: #457b9d;">
               <div class="col-lg-1">
                 #
               </div>
@@ -53,7 +53,7 @@
             <div class="row">
               <input class="btn-block" type="text" id="textsale">
             </div>
-            <div class="row bg-dark text-white mt-1">
+            <div class="row text-white mt-1" style="background-color: #457b9d;">
               <div class="col-lg-1">
                 #
               </div>
@@ -71,23 +71,24 @@
               </div>
               
             </div>
-
-            <div class="row" style="border-bottom-style: solid;border-bottom-width: thin;">
-              <div class="col-lg-1">
-                1
-              </div>
-              <div class="col-lg-5">
-                ยางลบดินสอ pentel
-              </div>
-              <div class="col-lg-2">
-                2
-              </div>
-              <div class="col-lg-2">
-                5
-              </div>
-              <div class="col-lg-2">
-                10
-              </div>
+            <div id="productForsale">
+              <!-- <div class="row" style="border-bottom-style: solid;border-bottom-width: thin;">
+                <div class="col-lg-1">
+                  1
+                </div>
+                <div class="col-lg-5">
+                  ยางลบดินสอ pentel
+                </div>
+                <div class="col-lg-2">
+                  2
+                </div>
+                <div class="col-lg-2">
+                  5
+                </div>
+                <div class="col-lg-2">
+                  10
+                </div>
+              </div> -->
             </div>
         </div>  
       </div>
